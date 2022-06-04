@@ -14,9 +14,9 @@ public class Main {
 		
 		Atividade at = Atividade.builder().nome("Atividade 1 ").codigo("215354832-4565").build();
 		
-		Endereco en = Endereco.builder().bairro("Centro").cep(00000000).complemento("nenhum").logradouro("Logradouro 1").numero(10).build();
+		Endereco en = Endereco.builder().bairro("Centro").complemento("nenhum").cidade("Prata").numero(10).rua("Rua 1").UF("PB").build();
 		
-		Fornecedor f = Fornecedor.builder().atividade(at).cnpj("11111111111111").contaAcesso(ca).endereco(en).nome("Fornecedo 1").telefone(0000000000).build();
+		Fornecedor f = Fornecedor.builder().cnpj("11111111111111").contaAcesso(ca).nome("Fornecedo 1").telefone(0000000000).build();
 	
 		System.out.println(f.toString());
 	}

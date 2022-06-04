@@ -1,31 +1,32 @@
 package com.pig.licitai.model.entity;
 
-import com.pig.licitai.model.util.Atividade;
-import com.pig.licitai.model.util.ContaAcesso;
-import com.pig.licitai.model.util.Endereco;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import com.pig.licitai.model.util.Atividade;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
+@Entity(name = "TB_FORNECEDOR")
 public class Fornecedor extends Usuario {
 	
-	private Atividade atividade;
+	@Column(name = "TESTE")
+	private String teste;
+	
+//	private Atividade atividade;
 
 	
 	public String toString() {
 		return "Fornecedor {"
 				+ "\n	" + getNome() 
 				+ "\n	" + getCnpj()
-				+ "\n	" + getTelefone()
-				+ "\n	" + getAtividade().toString()
-				+ "\n	" + getContaAcesso().toString()
-				+ "\n	" + getEndereco().toString() + " }";
+				+ "\n	" + getTelefone();
+//				+ "\n	" + getAtividade().toString()
+//				+ "\n	" + getContaAcesso().toString()
+//				+ "\n	" + getEndereco().toString() + " }";
 	}
 	
 	
