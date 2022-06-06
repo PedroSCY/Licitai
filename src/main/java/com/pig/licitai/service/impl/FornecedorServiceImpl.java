@@ -2,11 +2,14 @@ package com.pig.licitai.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.pig.licitai.exceptions.RegraDeNegocioException;
 import com.pig.licitai.model.entity.Fornecedor;
 import com.pig.licitai.model.repository.FornecedorRepositoy;
 import com.pig.licitai.service.FornecedorService;
 
+@Service
 public class FornecedorServiceImpl implements FornecedorService {
 	
 	private FornecedorRepositoy repository;
@@ -37,5 +40,15 @@ public class FornecedorServiceImpl implements FornecedorService {
 			throw new RegraDeNegocioException("Este CNPJ já está cadastrado");
 		}
 	}
+
+	@Override
+	public Fornecedor obterPorEmail(String email) {
+		Optional<Fornecedor> fornecedor = repository.findByEmail(email);
+		if(!fornecedor.isPresent())
+			throw new RegraDeNegocioException("Usuario não encontrado");
+		return repository.findByEmail(email).get();
+	}
+	
+	
 
 }

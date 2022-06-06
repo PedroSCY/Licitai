@@ -10,4 +10,6 @@ public interface FornecedorService {
 	
 	public Optional<Fornecedor> obterPorcnpj(String cnpj);
 	
+	public Fornecedor obterPorEmail(String email);
+	
 }

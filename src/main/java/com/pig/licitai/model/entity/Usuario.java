@@ -24,6 +24,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder
 @MappedSuperclass
+@NoArgsConstructor
 public abstract class Usuario {
 
 	@Column(name = "NOME")

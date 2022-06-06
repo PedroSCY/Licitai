@@ -2,12 +2,15 @@ package com.pig.licitai.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.pig.licitai.exceptions.ErroAutenticacao;
 import com.pig.licitai.exceptions.RegraDeNegocioException;
 import com.pig.licitai.model.repository.ContaAcessoRepository;
 import com.pig.licitai.model.util.ContaAcesso;
 import com.pig.licitai.service.ContaAcessoService;
 
+@Service
 public class ContaAcessoServiceImpl implements ContaAcessoService{
 	
 	private ContaAcessoRepository repository;
