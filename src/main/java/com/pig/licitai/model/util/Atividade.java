@@ -1,5 +1,11 @@
 package com.pig.licitai.model.util;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,9 +17,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+//@Embeddable
 public class Atividade {
 
-	private String nome;
+	@Column(name = "nomeAtividade")
+	private String nomeAtividade;
 	
-	private String codigo;
+	@Column(name = "codigoAtividade")
+	private String codigoAtividade;
+	
 }

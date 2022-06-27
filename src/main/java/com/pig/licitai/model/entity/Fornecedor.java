@@ -1,6 +1,7 @@
 package com.pig.licitai.model.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import com.pig.licitai.model.util.Atividade;
@@ -18,6 +19,7 @@ public class Fornecedor extends Usuario {
 	@Column(name = "TESTE")
 	private String teste;
 	
+//	@Embedded
 //	private Atividade atividade;
 
 	

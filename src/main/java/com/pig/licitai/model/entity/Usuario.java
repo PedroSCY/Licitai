@@ -3,6 +3,8 @@ package com.pig.licitai.model.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -39,6 +41,7 @@ public abstract class Usuario {
 	
 	@OneToOne
 	private ContaAcesso contaAcesso;
-//	
+	
+//	@Embedded
 //	private Endereco endereco;
 }

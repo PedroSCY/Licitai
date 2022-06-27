@@ -18,13 +18,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "TB_ENDERECO")
+@Entity(name = "TB_ENDERECO")
 public class Endereco {
 
 	@Id

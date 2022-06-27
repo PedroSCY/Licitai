@@ -1,6 +1,7 @@
 package com.pig.licitai.api.dto;
 
 
+import com.pig.licitai.model.util.Atividade;
 import com.pig.licitai.model.util.ContaAcesso;
 
 import lombok.Builder;
@@ -14,6 +15,7 @@ public class FornecedorDTO {
 	private String cnpj;
 	private long telefone;
 	private ContaAcesso contaAcesso;
+//	private Atividade atividade;
 //	private Endereco endereco;
 	
 }

@@ -14,7 +14,7 @@ public class Main {
 		
 		ContaAcesso ca = ContaAcesso.builder().email("user@user.com").senha("senha").isAdmin(true).build();
 		
-		Atividade at = Atividade.builder().nome("Atividade 1 ").codigo("215354832-4565").build();
+		Atividade at = Atividade.builder().nomeAtividade("Atividade 1 ").codigoAtividade("215354832-4565").build();
 		
 		Endereco en = Endereco.builder().bairro("Centro").complemento("nenhum").cidade("Prata").numero(10).rua("Rua 1").UF("PB").build();
 		
