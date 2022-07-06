@@ -2,6 +2,7 @@ package com.pig.licitai.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pig.licitai.exceptions.ErroAutenticacao;
@@ -14,10 +15,12 @@ import com.pig.licitai.service.ContaAcessoService;
 public class ContaAcessoServiceImpl implements ContaAcessoService{
 	
 	private ContaAcessoRepository repository;
+	private PasswordEncoder encoder;
 	
-	public ContaAcessoServiceImpl(ContaAcessoRepository repository ) {
+	public ContaAcessoServiceImpl(ContaAcessoRepository repository, PasswordEncoder encoder ) {
 		super();
 		this.repository = repository;
+		this.encoder = encoder;
 	}
 	
 	@Override
@@ -27,8 +30,10 @@ public class ContaAcessoServiceImpl implements ContaAcessoService{
 		if (!contaAcesso.isPresent()) {
 			throw new ErroAutenticacao("Usuario não encontrado");
 		}
+		
+		boolean senhasBatem = encoder.matches(senha, contaAcesso.get().getSenha());
 
-		if (!contaAcesso.get().getSenha().equals(senha)) {
+		if (!senhasBatem) {
 			throw new ErroAutenticacao("Senha incorreta");
 		}
 
@@ -46,7 +51,14 @@ public class ContaAcessoServiceImpl implements ContaAcessoService{
 	
 	public ContaAcesso salvarConta(ContaAcesso conta) {
 		validarEmail(conta.getEmail());
+		criptografarSenha(conta);
 		return repository.save(conta);
+	}
+	
+	public void criptografarSenha(ContaAcesso conta) {
+		String senha = conta.getSenha();
+		String senhaCripto = encoder.encode(senha);
+		conta.setSenha(senhaCripto);
 	}
 
 }

@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pig.licitai.api.dto.ContaAcessoDTO;
 import com.pig.licitai.api.dto.FornecedorDTO;
+import com.pig.licitai.api.dto.TokenDTO;
 import com.pig.licitai.exceptions.ErroAutenticacao;
 import com.pig.licitai.exceptions.RegraDeNegocioException;
 import com.pig.licitai.model.entity.Fornecedor;
+import com.pig.licitai.model.entity.Usuario;
 import com.pig.licitai.service.ContaAcessoService;
 import com.pig.licitai.service.FornecedorService;
+import com.pig.licitai.service.JwtService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,14 +27,20 @@ public class UsuarioController {
 
 	private final FornecedorService fornecedorservice;
 	private final ContaAcessoService contaAcessoService;
+	private final JwtService jwtService;
 	
 	@PostMapping("/autenticar")
-	public ResponseEntity autenticar( @RequestBody ContaAcessoDTO dto) {
+	public ResponseEntity<?> autenticar( @RequestBody ContaAcessoDTO dto) {
 		try {
 			contaAcessoService.autenticar(dto.getEmail(), dto.getSenha());
+			
 			if(fornecedorservice.obterPorEmail(dto.getEmail()) instanceof Fornecedor) {
 				Fornecedor fornecedorAutenticado = fornecedorservice.obterPorEmail(dto.getEmail());
-				return ResponseEntity.ok(fornecedorAutenticado);
+				
+				String token = jwtService.gerarToken((Usuario) fornecedorAutenticado);
+				TokenDTO tokenDTO = new TokenDTO(token);
+				
+				return ResponseEntity.ok(tokenDTO);
 			}
 			return null;
 		} catch (ErroAutenticacao e) {
