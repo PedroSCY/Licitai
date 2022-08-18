@@ -1,9 +1,7 @@
-package com.pig.licitai.model.entity;
+package com.pig.licitai.api.dto;
 
-import java.time.LocalDateTime;
-
-import com.pig.licitai.model.enuns.StatusEmail;
 import com.pig.licitai.model.util.Atividade;
+import com.pig.licitai.model.util.ContaAcesso;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,11 +12,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AnuncioLicitacao {
+public class AnuncioDTO {
 
 	private String text;
-	
 	private String titulo;
-	
-	private Atividade Atividade;
+	private Atividade atividade;
+	private String tipoEnvio;
 }

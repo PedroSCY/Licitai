@@ -3,6 +3,7 @@ package com.pig.licitai.model.util;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -17,13 +18,18 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-//@Embeddable
+@Entity
+@Table(name = "TB_ATIVIDADE")
 public class Atividade {
-
-	@Column(name = "nomeAtividade")
-	private String nomeAtividade;
 	
-	@Column(name = "codigoAtividade")
+	@Id
+	@Column(name = "CODIGO_Atividade")
 	private String codigoAtividade;
+
+	@Column(name = "SIGLA_SEGMENTO")
+	private String siglaSegmento;
+
+	@Column(name = "NOME_Atividade")
+	private String nomeAtividade;
 	
 }

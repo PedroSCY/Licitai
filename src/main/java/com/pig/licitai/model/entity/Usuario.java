@@ -9,12 +9,15 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.boot.context.properties.ConstructorBinding;
 
+import com.pig.licitai.model.util.Atividade;
 import com.pig.licitai.model.util.ContaAcesso;
 import com.pig.licitai.model.util.Endereco;
 
@@ -41,6 +44,7 @@ public abstract class Usuario {
 	
 	@OneToOne
 	private ContaAcesso contaAcesso;
+	
 	
 //	@Embedded
 //	private Endereco endereco;

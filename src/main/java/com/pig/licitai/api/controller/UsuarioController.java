@@ -52,11 +52,13 @@ public class UsuarioController {
 	@PostMapping
 	public ResponseEntity salvarForcecedor( @RequestBody FornecedorDTO dto) {
 		
+		
 		Fornecedor fornecedor = Fornecedor.builder()
 				.nome(dto.getNome())
 				.contaAcesso(dto.getContaAcesso())
 				.cnpj(dto.getCnpj())
 				.telefone(dto.getTelefone())
+				.atividade(dto.getAtividade())
 				.build();
 	
 		try {

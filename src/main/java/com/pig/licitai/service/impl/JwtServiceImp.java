@@ -84,8 +84,8 @@ public class JwtServiceImp implements JwtService {
 			usuarioSensivel = (Usuario) Fornecedor.builder()
 										.cnpj(fornecedor.getCnpj())
 										.nome(fornecedor.getNome())
-										.telefone(fornecedor.getTelefone())
-										.teste(fornecedor.getTeste())
+										.telefone(fornecedor.getTelefone())									
+										.atividade(fornecedor.getAtividade())
 										.build();
 		} else {
 			

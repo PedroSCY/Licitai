@@ -19,7 +19,7 @@ public class FornecedorDTO {
 	private String cnpj;
 	private long telefone;
 	private ContaAcesso contaAcesso;
-//	private Atividade atividade;
+	private Atividade atividade;
 //	private Endereco endereco;
 	
 }
