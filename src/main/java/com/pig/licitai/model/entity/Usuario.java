@@ -45,7 +45,6 @@ public abstract class Usuario {
 	@OneToOne
 	private ContaAcesso contaAcesso;
 	
-	
-//	@Embedded
-//	private Endereco endereco;
+	@OneToOne
+	private Endereco endereco;
 }

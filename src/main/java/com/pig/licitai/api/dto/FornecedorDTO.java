@@ -3,6 +3,7 @@ package com.pig.licitai.api.dto;
 
 import com.pig.licitai.model.util.Atividade;
 import com.pig.licitai.model.util.ContaAcesso;
+import com.pig.licitai.model.util.Endereco;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,6 @@ public class FornecedorDTO {
 	private long telefone;
 	private ContaAcesso contaAcesso;
 	private Atividade atividade;
-//	private Endereco endereco;
+	private Endereco endereco;
 	
 }

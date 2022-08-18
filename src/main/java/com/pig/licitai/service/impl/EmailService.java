@@ -303,7 +303,7 @@ public class EmailService {
           		"      <td style=\"overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\r\n" + 
           		"        \r\n" + 
           		"  <div style=\"color: #656e72; line-height: 140%; text-align: left; word-wrap: break-word;\">\r\n" + 
-          		"    <p style=\"font-size: 14px; line-height: 140%;\">Acabamos de indentivicar uma opotunidade de licitação na sua area de atuação! </p>\r\n" + 
+          		"    <p style=\"font-size: 14px; line-height: 140%;\">Que legal! Acabamos de identificar uma opotunidade de licitação na sua area de atuação! </p>\r\n" + 
           		"  </div>\r\n" + 
           		"\r\n" + 
           		"      </td>\r\n" + 

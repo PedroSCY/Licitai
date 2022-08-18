@@ -43,9 +43,9 @@ public class Endereco {
 	@Column(name = "BAIRRO")
 	private String bairro;
 	
-	@Size(min = 2, max = 2, message = "Selecione um estado válido.")
+	@Size(min = 2, max = 3, message = "Selecione um estado válido.")
 	@Column(name = "UF")
-	private String UF;
+	private String uf;
 	
 	@NotBlank
 	@Size(min = 3, max = 60, message = "A cidade deve conter algo entre 3 e 60 caracteres.")
@@ -53,7 +53,10 @@ public class Endereco {
 	private String cidade;
 	
 	@NotBlank
-	@Size(min = 10, max = 200, message = "O complemento deve ter algo entre 10 e 200 caracteres.")
+	@Size(min = 8, max = 9, message = "O CEP deve conter 8 caracteres.")
+	@Column(name = "CEP")
+	private String cep;
+	
 	@Column(name = "COMPLEMENTO")
 	private String complemento;
 	
@@ -84,8 +87,9 @@ public class Endereco {
 			+ "\n	Rua: " + rua + ","
 			+ "\n	Numero: " + numero + ", "
 			+ "\n	Bairro: " + bairro + ", "
-			+ "\n	UF: " + UF + ", "
+			+ "\n	UF: " + uf + ", "
 			+ "\n	Cidade: " + cidade + ", "
+			+ "\n	CEP: " + cep + ", "
 			+ "\n	Complemento: " + complemento + ", "
 			+ "\n}";
 	}

@@ -16,7 +16,7 @@ public class Main {
 		
 		Atividade at = Atividade.builder().nomeAtividade("Atividade 1 ").codigoAtividade("215354832-4565").build();
 		
-		Endereco en = Endereco.builder().bairro("Centro").complemento("nenhum").cidade("Prata").numero(10).rua("Rua 1").UF("PB").build();
+		Endereco en = Endereco.builder().bairro("Centro").complemento("nenhum").cidade("Prata").numero(10).rua("Rua 1").uf("PB").build();
 		
 		Fornecedor f = Fornecedor.builder().cnpj("11111111111111").contaAcesso(ca).nome("Fornecedo 1").telefone(0000000000).build();
 	

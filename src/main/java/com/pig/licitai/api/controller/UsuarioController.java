@@ -59,7 +59,9 @@ public class UsuarioController {
 				.cnpj(dto.getCnpj())
 				.telefone(dto.getTelefone())
 				.atividade(dto.getAtividade())
+				.endereco(dto.getEndereco())
 				.build();
+		
 	
 		try {
 			Fornecedor fornecedorSalvo = fornecedorservice.salvarFornecedor(fornecedor);

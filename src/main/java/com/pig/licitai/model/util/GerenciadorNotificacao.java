@@ -104,16 +104,4 @@ public class GerenciadorNotificacao {
 		return email;
 	}
 	
-	
-//	@Scheduled(fixedDelay = 10000)
-//	public void teste() {
-//		System.out.println(StatusEmail.ERROR);
-//		System.out.println(StatusEmail.ERROR.toString());
-//		System.out.println(StatusEmail.ERROR.ordinal());
-//		System.out.println(StatusEmail.SENT);
-//		System.out.println(StatusEmail.SENT.toString());
-//		System.out.println(StatusEmail.SENT.ordinal());
-//		
-//	}
-	
 }

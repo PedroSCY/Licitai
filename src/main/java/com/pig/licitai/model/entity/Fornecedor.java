@@ -29,8 +29,8 @@ public class Fornecedor extends Usuario {
 				+ "\n	" + getCnpj()
 				+ "\n	" + getTelefone()
 				+ "\n	" + getAtividade().toString()
-				+ "\n	" + getContaAcesso().toString();
-//				+ "\n	" + getEndereco().toString() + " }";
+				+ "\n	" + getContaAcesso().toString()
+				+ "\n	" + getEndereco().toString() + " }";
 	}
 	
 	

@@ -26,7 +26,6 @@ public class AtividadeService {
 	
 	public Atividade validarAtividade(Atividade atividade) {
 		if(verificarExistencia(atividade.getCodigoAtividade())) {
-			System.out.println("Entrei IF");
 			return repository.findById(atividade.getCodigoAtividade()).get();
 		}else {
 			System.out.println("Entrei Else");
